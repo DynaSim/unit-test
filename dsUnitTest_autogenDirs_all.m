@@ -65,7 +65,7 @@ classdef dsUnitTest_autogenDirs_all < matlab.unittest.TestCase
             case '' % dir
               continue
             case '.fig'
-              % compareFigFiles 
+              % compareFigFiles
               testCase.verifyEmpty( compareFigFiles2(thistestOutputFilePath, thisExpectedOutputFilePath, true) );
             case '.mat'
               % compare loaded structs

@@ -72,8 +72,8 @@ try
   fprintf('Test Coverage (%% of code lines): %s\n', coverPercentStr);
 
   %% make coverage svg
-  filePath = '/home/erik/Dropbox/research/dsJenkinsBadge/coverage.svg';
-  system(['python /home/erik/Dropbox/Programming/Python/universal_coverage_badge/__main__.py -percent ' coverPercentStr ' -o ' filePath ' -f True']);
+  filepath = dsGetConfig('ds_jenkins_badge_path');
+  system(['python ' dsGetConfig('ds_universal_coverage_badge_py_path') ' ' coverPercentStr ' -o ' filePath ' -f True']);
 catch e
   disp(getReport(e,'extended'))
   exit(1);

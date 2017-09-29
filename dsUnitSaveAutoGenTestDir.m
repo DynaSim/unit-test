@@ -19,15 +19,6 @@ else
   fnName = [fnNameStack '__' stack(3).name];
 end
 
-% check package namespace
-if ~isfunction(fnNameStack) || strcmp(fnNameStack, 'strrep')
-  if isfunction(['ds.' fnNameStack])
-    fnName = ['ds.' fnName];
-  elseif isfunction(['dsUnit.' fnNameStack])
-    fnName = ['dsUnit.' fnName];
-  end
-end
-
 hash = DataHash(argin);
 
 % test dir
