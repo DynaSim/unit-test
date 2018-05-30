@@ -68,11 +68,11 @@ data=dsSimulate(eqns, 'tspan',[0 100], 'vary',vary, 'study_dir','demo_izhikevich
 
 %% parfor
 data=dsSimulate(eqns, 'tspan',[0 100], 'vary',vary, 'study_dir','demo_izhikevich_vary_parfor',...
-  'parallel_flag',1, autogenOptions{:});
+  'parfor_flag',1, autogenOptions{:});
 
 %% parfor compile
 data=dsSimulate(eqns, 'tspan',[0 100], 'vary',vary, 'study_dir','demo_izhikevich_vary_parfor_compile',...
-  'parallel_flag',1, 'compile_flag',1, autogenOptions{:});
+  'parfor_flag',1, 'compile_flag',1, autogenOptions{:});
 
 %% compile
 data=dsSimulate(eqns, 'tspan',[0 100], 'vary',vary, 'study_dir','demo_izhikevich_vary_compile',...
@@ -233,7 +233,7 @@ data=dsSimulate(s,'compile_flag',1, 'study_dir','demo_sPING_3_compile', autogenO
 
 % Combine compilation and parallelization
 vary={'','I',0:2:14};
-data=dsSimulate(s, 'compile_flag',1, 'parallel_flag',1, 'vary', vary, 'study_dir','demo_sPING_3_compile_parallel', autogenOptions{:});
+data=dsSimulate(s, 'compile_flag',1, 'parfor_flag',1, 'vary', vary, 'study_dir','demo_sPING_3_compile_parallel', autogenOptions{:});
 dsPlot(data, autogenOptions{:}); close all
 
 %% Matlab Solvers
